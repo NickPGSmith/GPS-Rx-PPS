@@ -3,6 +3,8 @@ A KiCAD schematic and PCB to buffer/alarm a GPS receiver PPS signal
 
 ## Introduction
 
+There are many cheap GPS receiver boards available which provide a serial output and Pulse-Per-Second (PPS) output, typically based on the uBlox 6 or later chip. This board is designed to take the PPS signal from such a receiver and provide buffering, LED drive, and missing pulse alarm (audio and LED).
+
 For a printable schematic, see the file:
 - GPS Rx PPS_sch.pdf
 
@@ -11,6 +13,23 @@ For a file to send to a fabricator (eg JLCPCB or PCBWay), use the file:
 
 ## uBlox Receiver Configuration
 
+The uBlox receiver can be configured via the serial line using the [uCenter](https://www.u-blox.com/en/product/u-center) software. It should generate a 1 Hz outout (timed on falling edge) when GPS synchronisation has been obtained, otherwise a constant high to indicate failure:
+
+View -> Configuration View; to activate change: Send
+
+- TP5 (Timepulse 5)
+-- PPS Settings for no GPS lock (eg use as an "alert" signal:
+--- Frequency : 1 Hz -> 10 Hz
+--- Duty Cycle : 100% -> 25% (alternatively set to 0% for permanent low output)
+-- PPS Settings for GPS Locked:
+--- Frequency Locked : 1 Hz
+--- Duty Locked : 50%
+-- Rising Edge on TOS
+
+To save:
+- CFG (Configuration)
+-- Select: Save current configuration
+-- Select in Devices: 2-I2C-EEPROM
 
 ## Circuit Description
 
