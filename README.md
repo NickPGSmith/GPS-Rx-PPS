@@ -18,18 +18,18 @@ The uBlox receiver can be configured via the serial line using the [uCenter](htt
 View -> Configuration View; to activate change: Send
 
 - TP5 (Timepulse 5)
--- PPS Settings for no GPS lock (eg use as an "alert" signal:
---- Frequency : 1 Hz -> 10 Hz
---- Duty Cycle : 100% -> 25% (alternatively set to 0% for permanent low output)
--- PPS Settings for GPS Locked:
---- Frequency Locked : 1 Hz
---- Duty Locked : 50%
--- Rising Edge on TOS
+    - PPS Settings for no GPS lock (eg use as an "alert" signal:
+        - Frequency : 1 Hz -> 10 Hz
+        - Duty Cycle : 100% -> 25% (alternatively set to 0% for permanent low output)
+    - PPS Settings for GPS Locked:
+        - Frequency Locked : 1 Hz
+        - Duty Locked : 50%
+    - Rising Edge on TOS
 
 To save:
 - CFG (Configuration)
--- Select: Save current configuration
--- Select in Devices: 2-I2C-EEPROM
+    - Select: Save current configuration
+    - Select in Devices: 2-I2C-EEPROM
 
 ## Circuit Description
 
