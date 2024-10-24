@@ -35,7 +35,7 @@ To save:
 
 The GPS receiver PPS signal is buffered by U2B to provide LED output, U2C to provide buffer drive for an external circuit, and the missing pulse detector built around U1. This will generate a low output after a few seconds of not receiving pulses; the timing can be adjusted by the combination of R3 and C4.
 
-U2D and U2E provide an audio oscillator of a few kHz; its frequency can be adjusted by R9 and C6 to match the resonant frequncy of the piezo sounder used. The oscillator use U2F as an output buffer/drive, with RV1 preset setting the desired volume.
+U2D and U2E provide an audio oscillator of a few kHz; its frequency can be adjusted by R9 and C6 to match the resonant frequncy of the piezo sounder used. The oscillator uses U2F as an output buffer/drive, with RV1 preset setting the desired volume.
 The oscillations are quenched when Q2 is turned on, ie when the "Not Alarm" output of U1 is high.
 
 PCB Connections:
